@@ -20,7 +20,9 @@ pipeline {
         }
         stage('Build ContainerImage and push to jfrog ') {
             steps {
-                sh 'podman build -t sample-springboot-app ./dockerfile'
+                dir('path/to/your/dockerfile') {
+                    sh 'podman build -t sample-springboot-app .'
+                }
                 // Push the image to jfrog Artifactory 
                 sh 'echo "image created " '
             }

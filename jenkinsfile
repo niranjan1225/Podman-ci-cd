@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('Build Jar File') {
             steps {
+                dir('C:\Users\Kalpana Sundar\OneDrive\Desktop\Git-jens-pod') {
                 sh'''
                 java -version
                 chmod +x mvnw
@@ -14,6 +15,7 @@ pipeline {
                 ./mvnw package -DskipTests
                 echo "jar file created"
                 '''
+                }
             }
         }
         stage('Build ContainerImage and push to jfrog ') {

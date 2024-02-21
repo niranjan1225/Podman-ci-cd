@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build Jar File') {
             steps {
-                dir('C:/Users/Kalpana Sundar/OneDrive/Desktop/Git-jens-pod') {
+                dir('/C:/Users/Kalpana Sundar/OneDrive/Desktop/Git-jens-pod') {
                 sh'''
                 java -version
                 chmod +x mvnw

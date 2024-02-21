@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'OCNODE'
-    }
+    agent any
     
     stages {
         stage('Build Jar File') {

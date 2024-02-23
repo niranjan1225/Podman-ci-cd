@@ -6,7 +6,6 @@ pipeline {
     stages {
         stage('Build Jar File') {
             steps {
-                dir('C:/Users/Kalpana Sundar/OneDrive/Desktop/Git-jens-pod') {
                 sh'''
                 java -version
                 chmod +x mvnw
@@ -17,12 +16,11 @@ pipeline {
                 '''
                 }
             }
-        }
         stage('Build ContainerImage and push to jfrog ') {
             steps {
-                dir('C:/Users/Kalpana Sundar/OneDrive/Desktop/Git-jens-pod/dockerfile') {
-                    sh 'podman build -t sample-springboot-app .'
-                }
+                sh 'ls'
+                sh 'pwd'
+                sh 'podman build -t sample-springboot-app .'
                 // Push the image to jfrog Artifactory 
                 sh 'echo "image created " '
             }
